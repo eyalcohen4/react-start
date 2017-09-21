@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import reactDOM from 'react-dom';
 
-import App from './App.jsx';
-
 import '@/styles/main.scss';
+
+import App from './App';
 
 const html = <App />;
 
