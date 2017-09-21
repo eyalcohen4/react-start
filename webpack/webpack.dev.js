@@ -1,30 +1,28 @@
-var path = require('path');
-var merge = require('webpack-merge');
-var WebpackDashboard = require('webpack-dashboard');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+/* eslint-disable */
 
-var srcFolder   = path.resolve(__dirname, '../src');
-var buildFolder = path.resolve(__dirname, '../dist'); 
-var publicFolder = path.resolve(__dirname, '../assets');
+const path = require('path');
+const merge = require('webpack-merge');
+const WebpackDashboard = require('webpack-dashboard');
+const webpack = require('webpack');
+const base = require('./webpack.base');
 
-var base = require('./webpack.base');
+const config = {
+  output: {
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
+    publicPath: '/',
+  },
 
-var config = {
-	output: {
-		filename: '[name].js',
-		chunkFilename: '[name].chunk.js',
-		publicPath: '/',		
-	},
+  plugins: [
+    new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('development') } }),
+  ],
 
-	devServer: {
-		historyApiFallback: false,
-		contentBase: path.resolve(__dirname, '../src'),
-		port: 4464,
-		publicPath: '/',
-	},
-
-	plugins: [
-	]
+  devServer: {
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, '../src'),
+    port: 4464,
+    publicPath: '/',
+  },
 };
 
 module.exports = merge(base, config);

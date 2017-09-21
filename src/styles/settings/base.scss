@@ -1,4 +1,15 @@
-#app {
+.App {
+  display: flex;
+  flex-direction: column;
 	height: 100vh;
 	background: rgba(66, 134, 244, 0.8);
+}
+
+main {
+  flex: 1;
+  padding: 10px;
+}
+
+footer {
+  background: #fff;
 }

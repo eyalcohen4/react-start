@@ -12,8 +12,10 @@
   ],
   "rules": {
     "prettier/prettier": ["error", {
-      "singleQuote": true
-    }]
+      "singleQuote": true,
+      "trailingComma": "all"
+    }],
+    "arrow-parens": "off"
   },
   "env": {
     "browser": true,
