@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb",
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack/webpack.base.js"
+      }
+    }
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "singleQuote": true
+    }]
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
