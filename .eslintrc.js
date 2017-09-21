@@ -9,5 +9,13 @@ module.exports = {
           "config": "./webpack/webpack.base.js",
         }
       }
-    }
+    },
+    "plugins": [
+      "prettier",
+    ],
+    "rules": {
+      "prettier/prettier": ["error", {
+        "singleQuote": true,
+      }],
+    },
 };
